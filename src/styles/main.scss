@@ -1,0 +1,17 @@
+@use './variables/variables' as *;
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+p {
+    margin: 0;
+}
+
+html,
+body {
+    height: 100svh;
+    background-color: $primary-color;
+}
