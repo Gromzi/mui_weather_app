@@ -3,15 +3,44 @@
 *,
 *:before,
 *:after {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 p {
-    margin: 0;
+  margin: 0;
 }
 
 html,
 body {
-    height: 100svh;
-    background-color: $primary-color;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  margin: 0;
+}
+
+html,
+body,
+.appContainer {
+  height: 100svh;
+  width: 100vw;
+  background-color: $primary-color;
+}
+
+.appContainer {
+  display: flex;
+
+  overflow-y: hidden;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+}
+
+.MuiBottomNavigation-root {
+  position: fixed;
+  bottom: 0;
+
+  width: 100%;
+
+  a {
+    text-decoration: none;
+  }
 }
