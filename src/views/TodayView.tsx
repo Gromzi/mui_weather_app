@@ -1,13 +1,13 @@
-import { Typography } from '@mui/material'
+import { Box, Typography } from '@mui/material'
 import '../styles/_todayView.scss'
 
 const TodayView = () => {
   return (
-    <div className="container" id="today">
-      <Typography variant="h4" align="center" color={'#f3f6f9'}>
+    <Box className="container" id="today">
+      <Typography variant="h4" align="center" sx={{ pt: 10 }}>
         TodayView
       </Typography>
-    </div>
+    </Box>
   )
 }
 

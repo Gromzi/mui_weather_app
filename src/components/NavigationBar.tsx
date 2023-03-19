@@ -2,36 +2,38 @@ import {
   BottomNavigation,
   BottomNavigationAction,
   Typography,
+  withTheme,
 } from '@mui/material'
+import Filter1RoundedIcon from '@mui/icons-material/Filter1Rounded'
+import Filter7Icon from '@mui/icons-material/Filter7'
 
 const NavigationBar = () => {
   return (
     <BottomNavigation
+      showLabels
       sx={{
-        bgcolor: '#0a1929',
-        '& .Mui-selected': {
-          '& .MuiBottomNavigationAction-label': {
-            fontSize: (theme) => theme.typography.caption,
-            transition: 'none',
-            fontWeight: 'bold',
-            lineHeight: '20px',
-          },
-          '& .MuiSvgIcon-root, & .MuiBottomNavigationAction-label': {
-            color: (theme) => theme.palette.secondary.main,
-          },
-        },
+        backgroundColor: 'secondary.main',
       }}
       value={undefined}
       onChange={() => {}}
     >
       <BottomNavigationAction
-        label="Test"
+        label="Day"
         href="#today"
-        icon={<Typography variant="button">Day</Typography>}
+        // icon={<Typography variant="button">Day</Typography>}
+        icon={
+          <Filter1RoundedIcon
+            sx={{ color: 'primary.light', mb: 0.5 }}
+          />
+        }
       />
       <BottomNavigationAction
+        label="Week"
         href="#week"
-        icon={<Typography variant="button">Week</Typography>}
+        // icon={<Typography variant="button">Week</Typography>}
+        icon={
+          <Filter7Icon sx={{ color: 'primary.light', mb: 0.5 }} />
+        }
       />
     </BottomNavigation>
   )

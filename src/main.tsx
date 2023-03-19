@@ -18,7 +18,12 @@ const theme = createTheme({
     },
     text: {
       primary: '#f3f6f9',
-      secondary: '#f3f6f9',
+      secondary: '#4c76a0',
+    },
+  },
+  typography: {
+    allVariants: {
+      color: '#f3f6f9',
     },
   },
 })
