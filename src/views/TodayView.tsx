@@ -7,10 +7,9 @@ import {
   CircularProgress,
   Typography,
 } from '@mui/material'
-import { useState } from 'react'
 import '../styles/_todayView.scss'
 import useFetch from '../hooks/useFetch'
-import { textAlign } from '@mui/system'
+import RefreshIcon from '@mui/icons-material/Refresh'
 
 const TodayView = () => {
   const { data, loading, error, refetch } = useFetch(
@@ -39,8 +38,18 @@ const TodayView = () => {
         }}
       >
         <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
+          <Typography
+            gutterBottom
+            variant="h5"
+            component="div"
+            sx={{
+              display: 'flex',
+              justifyContent: 'space-between',
+              alignItems: 'center',
+            }}
+          >
             Weather Info
+            <RefreshIcon onClick={refetch} />
           </Typography>
           <Typography
             variant="body2"
