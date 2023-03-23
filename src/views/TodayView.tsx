@@ -37,7 +37,9 @@ const TodayView = () => {
           backgroundColor: 'secondary.main',
         }}
       >
-        <CardContent>
+        <CardContent
+          sx={{ display: 'flex', flexDirection: 'column' }}
+        >
           <Typography
             gutterBottom
             variant="h5"
@@ -51,13 +53,15 @@ const TodayView = () => {
             Weather Info
             <RefreshIcon onClick={refetch} />
           </Typography>
-          <Typography
-            variant="body2"
-            color="text.secondary"
-            sx={{ display: 'flex', justifyContent: 'center' }}
-          >
-            {loading ? <CircularProgress /> : data?.main.feels_like}
-          </Typography>
+          {loading ? (
+            <CircularProgress sx={{ alignSelf: 'center' }} />
+          ) : (
+            <Box>
+              <Typography variant="body2" color="text.secondary">
+                {data?.main.feels_like}
+              </Typography>
+            </Box>
+          )}
         </CardContent>
         <CardActions>
           <Button size="small" sx={{ color: 'text.secondary' }}>
