@@ -4,3 +4,9 @@
 
   scroll-snap-align: start;
 }
+
+.icon {
+  &:hover {
+    opacity: 0.5;
+  }
+}

@@ -1,5 +1,6 @@
 import { Box } from '@mui/material'
 import AccessibleForwardIcon from '@mui/icons-material/AccessibleForward'
+import '../styles/_upperNavBar.scss'
 
 const UpperNavBar = () => {
   return (
@@ -16,6 +17,7 @@ const UpperNavBar = () => {
       }}
     >
       <AccessibleForwardIcon
+        className="acc-icon"
         fontSize="large"
         sx={{ color: 'primary.light' }}
         onClick={() => {
