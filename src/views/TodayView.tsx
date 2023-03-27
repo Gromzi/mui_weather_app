@@ -7,7 +7,11 @@ const TodayView = () => {
     <Box
       className="container"
       id="today"
-      sx={{ display: 'flex', flexDirection: 'column' }}
+      sx={{
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+      }}
     >
       <Typography variant="h4" align="center" sx={{ pt: 10 }}>
         TodayView
