@@ -24,15 +24,13 @@ const CurrentWeatherInfo = ({ weatherData, weatherError }: any) => {
 
     let hours = date.getUTCHours()
     let minutes = '0' + date.getUTCMinutes()
-    let seconds = '0' + date.getUTCSeconds()
 
     // Will display date in DD.MM.YYYY format
     let formattedDate =
       day.slice(-2) + '.' + month.slice(-2) + '.' + year + ' '
 
-    // Will display time in HH:MM:SS format
-    let formattedTime =
-      hours + ':' + minutes.slice(-2) + ':' + seconds.slice(-2)
+    // Will display time in HH:MM format
+    let formattedTime = hours + ':' + minutes.slice(-2)
 
     return formattedDate + formattedTime
   }

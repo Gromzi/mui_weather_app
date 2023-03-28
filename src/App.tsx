@@ -7,16 +7,6 @@ import UpperNavBar from './components/UpperNavBar'
 
 function App() {
   return (
-    // <div
-    //   className="appContainer"
-    //   style={{ backgroundColor: 'primary.main' }}
-    // >
-    //   <TodayView />
-    //   <WeekView />
-
-    //   <NavigationBar />
-    // </div>
-
     <Box
       className="appContainer"
       sx={{ backgroundColor: 'primary.main' }}

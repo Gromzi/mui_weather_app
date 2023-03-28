@@ -43,7 +43,7 @@ const WeatherTodayCard = () => {
         maxWidth: 345,
         ml: 2,
         mr: 2,
-        mt: 4,
+        mt: 2,
         backgroundColor: 'secondary.main',
       }}
       elevation={20}
