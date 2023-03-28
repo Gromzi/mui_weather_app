@@ -3,21 +3,50 @@ import { Box, Typography } from '@mui/material'
 const CurrentWeatherInfo = ({ weatherData, weatherError }: any) => {
   const unixToTime = (unix_timestamp: number): String => {
     let date = new Date(unix_timestamp * 1000)
-    let hours = date.getHours()
-    let minutes = '0' + date.getMinutes()
-    let seconds = '0' + date.getSeconds()
 
-    // Will display time in 10:30:23 format
+    let hours = date.getUTCHours()
+    let minutes = '0' + date.getUTCMinutes()
+    let seconds = '0' + date.getUTCSeconds()
+
+    // Will display time in HH:MM:SS format
     let formattedTime =
       hours + ':' + minutes.slice(-2) + ':' + seconds.slice(-2)
 
     return formattedTime
   }
 
-  let datetime: String = Date().slice(0, 24)
+  const unixToDate = (unix_timestamp: number): String => {
+    let date = new Date(unix_timestamp * 1000)
 
-  let sunriseTime: String = unixToTime(weatherData?.sys.sunrise)
-  let sunsetTime: String = unixToTime(weatherData?.sys.sunset)
+    let day = '0' + date.getUTCDate()
+    let month = '0' + (date.getUTCMonth() + 1)
+    let year = date.getUTCFullYear()
+
+    let hours = date.getUTCHours()
+    let minutes = '0' + date.getUTCMinutes()
+    let seconds = '0' + date.getUTCSeconds()
+
+    // Will display date in DD.MM.YYYY format
+    let formattedDate =
+      day.slice(-2) + '.' + month.slice(-2) + '.' + year + ' '
+
+    // Will display time in HH:MM:SS format
+    let formattedTime =
+      hours + ':' + minutes.slice(-2) + ':' + seconds.slice(-2)
+
+    return formattedDate + formattedTime
+  }
+
+  let datetime: String = unixToDate(
+    new Date().getTime() / 1000 + weatherData?.timezone
+  )
+
+  let sunriseTime: String = unixToTime(
+    weatherData?.sys.sunrise + weatherData?.timezone
+  )
+  let sunsetTime: String = unixToTime(
+    weatherData?.sys.sunset + weatherData?.timezone
+  )
 
   return (
     <Box className="weatherInfoContainer">
