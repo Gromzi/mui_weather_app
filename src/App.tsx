@@ -4,12 +4,12 @@ import NavigationBar from './components/NavigationBar'
 import { Box } from '@mui/material'
 import UpperNavBar from './components/UpperNavBar'
 import { useState } from 'react'
+import { accViewSetterFunctionType } from './types/types'
 
 function App() {
   const [accessibilityView, setAccessibilityView] = useState(false)
 
-  const accessibilityViewSetter = () => {
-    console.log(`Accessibility view: ${accessibilityView}`)
+  const accViewSetter: accViewSetterFunctionType = () => {
     setAccessibilityView(!accessibilityView)
   }
 
@@ -18,7 +18,10 @@ function App() {
       className="appContainer"
       sx={{ backgroundColor: 'primary.main' }}
     >
-      <UpperNavBar accViewSetter={accessibilityViewSetter} />
+      <UpperNavBar
+        accViewSetter={accViewSetter}
+        accView={accessibilityView}
+      />
 
       <TodayView accView={accessibilityView} />
 

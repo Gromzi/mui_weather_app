@@ -1,8 +1,15 @@
-import { Box } from '@mui/material'
+import { Box, IconButton } from '@mui/material'
 import AccessibleForwardIcon from '@mui/icons-material/AccessibleForward'
 import '../styles/_upperNavBar.scss'
+import { accViewSetterFunctionType } from '../types/types'
+import React, { useEffect, useState } from 'react'
 
-const UpperNavBar = ({ accViewSetter }: any) => {
+type PropTypes = {
+  accViewSetter: accViewSetterFunctionType
+  accView: boolean
+}
+
+const UpperNavBar = ({ accViewSetter, accView }: PropTypes) => {
   return (
     <Box
       sx={{
@@ -16,17 +23,17 @@ const UpperNavBar = ({ accViewSetter }: any) => {
         backgroundColor: 'secondary.main',
       }}
     >
-      <AccessibleForwardIcon
-        className="acc-icon"
-        fontSize="large"
-        sx={{ color: 'primary.light' }}
-        onClick={() => {
-          accViewSetter
-          console.log('ACC')
-        }}
-      />
+      <IconButton
+        onClick={accViewSetter}
+        sx={{ color: accView ? 'red' : 'primary.light' }}
+      >
+        <AccessibleForwardIcon
+          className="acc-icon"
+          fontSize="large"
+        />
+      </IconButton>
     </Box>
   )
 }
 
-export default UpperNavBar
+export default React.memo(UpperNavBar)
