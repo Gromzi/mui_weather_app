@@ -1,4 +1,4 @@
-import { Box, Typography } from '@mui/material'
+import { Box, Icon, SvgIcon, Typography } from '@mui/material'
 
 const CurrentWeatherInfo = ({ weatherData, weatherError }: any) => {
   const unixToTime = (unix_timestamp: number): String => {
@@ -46,6 +46,8 @@ const CurrentWeatherInfo = ({ weatherData, weatherError }: any) => {
     weatherData?.sys.sunset + weatherData?.timezone
   )
 
+  let iconPath: string = `./icons/${weatherData?.weather[0].icon}.svg`
+
   return (
     <Box className="weatherInfoContainer">
       {weatherError ? (
@@ -54,7 +56,7 @@ const CurrentWeatherInfo = ({ weatherData, weatherError }: any) => {
         </Typography>
       ) : (
         <Box sx={{ display: 'flex', flexDirection: 'column' }}>
-          <Box sx={{ display: 'flex', gap: 1, mb: 2 }}>
+          <Box sx={{ display: 'flex', gap: 1 }}>
             <Typography
               variant="body2"
               fontWeight={'bold'}
@@ -65,6 +67,10 @@ const CurrentWeatherInfo = ({ weatherData, weatherError }: any) => {
             </Typography>
             <Typography variant="body2">{datetime}</Typography>
           </Box>
+
+          <Icon sx={{ width: '100%', height: '100%' }}>
+            <img src={iconPath} />
+          </Icon>
 
           <Box sx={{ display: 'flex', gap: 1 }}>
             <Typography

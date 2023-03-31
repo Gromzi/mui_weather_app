@@ -10,7 +10,6 @@ import '../styles/_todayView.scss'
 const NavigationBar = () => {
   return (
     <BottomNavigation
-      showLabels
       sx={{
         backgroundColor: 'secondary.main',
       }}
