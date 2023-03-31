@@ -94,14 +94,6 @@ const WeatherTodayCard = () => {
           />
         )}
       </CardContent>
-      <CardActions>
-        <Button size="small" sx={{ color: 'text.secondary' }}>
-          Share
-        </Button>
-        <Button size="small" sx={{ color: 'text.secondary' }}>
-          Learn More
-        </Button>
-      </CardActions>
     </Card>
   )
 }
