@@ -14,7 +14,6 @@ function App() {
       <UpperNavBar />
 
       <TodayView />
-      <WeekView />
 
       <NavigationBar />
     </Box>
