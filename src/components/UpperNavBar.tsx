@@ -2,7 +2,7 @@ import { Box } from '@mui/material'
 import AccessibleForwardIcon from '@mui/icons-material/AccessibleForward'
 import '../styles/_upperNavBar.scss'
 
-const UpperNavBar = () => {
+const UpperNavBar = ({ accessibilityViewSetter }: any) => {
   return (
     <Box
       sx={{
@@ -21,7 +21,8 @@ const UpperNavBar = () => {
         fontSize="large"
         sx={{ color: 'primary.light' }}
         onClick={() => {
-          console.log('Accesibility mode')
+          accessibilityViewSetter
+          console.log('ACC')
         }}
       />
     </Box>

@@ -15,7 +15,7 @@ import { useState } from 'react'
 import CurrentWeatherInfo from './CurrentWeatherInfo'
 import '../styles/_todayView.scss'
 
-const WeatherTodayCard = () => {
+const WeatherTodayCard = ({ accView }: any) => {
   const [cityNameInput, setCityNameInput] = useState('Gliwice')
   const [cityNameFetch, setCityNameFetch] = useState('Gliwice')
 
@@ -87,11 +87,13 @@ const WeatherTodayCard = () => {
 
         {weatherLoading ? (
           <CircularProgress sx={{ alignSelf: 'center' }} />
-        ) : (
+        ) : !accView ? (
           <CurrentWeatherInfo
             weatherData={weatherData}
             weatherError={weatherError}
           />
+        ) : (
+          <Typography>ACC VIEW</Typography>
         )}
       </CardContent>
     </Card>

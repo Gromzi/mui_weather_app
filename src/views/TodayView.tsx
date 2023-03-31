@@ -2,7 +2,7 @@ import { Box, Typography } from '@mui/material'
 import WeatherTodayCard from '../components/WeatherTodayCard'
 import '../styles/_todayView.scss'
 
-const TodayView = () => {
+const TodayView = ({ accView }: any) => {
   return (
     <Box
       className="container"
@@ -17,7 +17,7 @@ const TodayView = () => {
         TodayView
       </Typography>
 
-      <WeatherTodayCard />
+      <WeatherTodayCard accView={accView} />
     </Box>
   )
 }
