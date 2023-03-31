@@ -14,7 +14,7 @@ const TodayView = ({ accView }: any) => {
       }}
     >
       <Typography variant="h4" align="center" sx={{ pt: 10 }}>
-        TodayView
+        MUI Weather App
       </Typography>
 
       <WeatherTodayCard accView={accView} />

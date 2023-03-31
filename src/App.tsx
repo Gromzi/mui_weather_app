@@ -9,8 +9,8 @@ function App() {
   const [accessibilityView, setAccessibilityView] = useState(false)
 
   const accessibilityViewSetter = () => {
-    setAccessibilityView(!accessibilityView)
     console.log(`Accessibility view: ${accessibilityView}`)
+    setAccessibilityView(!accessibilityView)
   }
 
   return (
@@ -18,9 +18,7 @@ function App() {
       className="appContainer"
       sx={{ backgroundColor: 'primary.main' }}
     >
-      <UpperNavBar
-        accessibilityViewSetter={accessibilityViewSetter}
-      />
+      <UpperNavBar accViewSetter={accessibilityViewSetter} />
 
       <TodayView accView={accessibilityView} />
 
