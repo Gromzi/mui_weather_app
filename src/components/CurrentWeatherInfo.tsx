@@ -1,40 +1,11 @@
-import { Box, Icon, SvgIcon, Typography } from '@mui/material'
+import { Box, Icon, Typography } from '@mui/material'
 
-const CurrentWeatherInfo = ({ weatherData, weatherError }: any) => {
-  const unixToTime = (unix_timestamp: number): String => {
-    let date = new Date(unix_timestamp * 1000)
-
-    let hours = date.getUTCHours()
-    let minutes = '0' + date.getUTCMinutes()
-    let seconds = '0' + date.getUTCSeconds()
-
-    // Will display time in HH:MM:SS format
-    let formattedTime =
-      hours + ':' + minutes.slice(-2) + ':' + seconds.slice(-2)
-
-    return formattedTime
-  }
-
-  const unixToDate = (unix_timestamp: number): String => {
-    let date = new Date(unix_timestamp * 1000)
-
-    let day = '0' + date.getUTCDate()
-    let month = '0' + (date.getUTCMonth() + 1)
-    let year = date.getUTCFullYear()
-
-    let hours = date.getUTCHours()
-    let minutes = '0' + date.getUTCMinutes()
-
-    // Will display date in DD.MM.YYYY format
-    let formattedDate =
-      day.slice(-2) + '.' + month.slice(-2) + '.' + year + ' '
-
-    // Will display time in HH:MM format
-    let formattedTime = hours + ':' + minutes.slice(-2)
-
-    return formattedDate + formattedTime
-  }
-
+const CurrentWeatherInfo = ({
+  weatherData,
+  weatherError,
+  unixToTime,
+  unixToDate,
+}: any) => {
   let datetime: String = unixToDate(
     new Date().getTime() / 1000 + weatherData?.timezone
   )

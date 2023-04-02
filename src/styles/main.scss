@@ -26,10 +26,6 @@ body,
 
 .appContainer {
   display: flex;
-
-  overflow-y: hidden;
-  overflow-x: scroll;
-  scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
 }
 
@@ -43,3 +39,6 @@ body,
     text-decoration: none;
   }
 }
+
+// .MuiCardContent-root {
+// }

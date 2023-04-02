@@ -14,6 +14,7 @@ import SearchIcon from '@mui/icons-material/Search'
 import { useState } from 'react'
 import CurrentWeatherInfo from './CurrentWeatherInfo'
 import '../styles/_todayView.scss'
+import AccessibilityWeatherInfo from './AccessibilityWeatherInfo'
 
 const WeatherTodayCard = ({ accView }: any) => {
   const [cityNameInput, setCityNameInput] = useState('Gliwice')
@@ -36,6 +37,40 @@ const WeatherTodayCard = ({ accView }: any) => {
   // coordsError && console.log(coordsError)
   // console.log(weatherData)
   // console.log(coordsData)
+
+  const unixToTime = (unix_timestamp: number): String => {
+    let date = new Date(unix_timestamp * 1000)
+
+    let hours = date.getUTCHours()
+    let minutes = '0' + date.getUTCMinutes()
+    let seconds = '0' + date.getUTCSeconds()
+
+    // Will display time in HH:MM:SS format
+    let formattedTime =
+      hours + ':' + minutes.slice(-2) + ':' + seconds.slice(-2)
+
+    return formattedTime
+  }
+
+  const unixToDate = (unix_timestamp: number): String => {
+    let date = new Date(unix_timestamp * 1000)
+
+    let day = '0' + date.getUTCDate()
+    let month = '0' + (date.getUTCMonth() + 1)
+    let year = date.getUTCFullYear()
+
+    let hours = date.getUTCHours()
+    let minutes = '0' + date.getUTCMinutes()
+
+    // Will display date in DD.MM.YYYY format
+    let formattedDate =
+      day.slice(-2) + '.' + month.slice(-2) + '.' + year + ' '
+
+    // Will display time in HH:MM format
+    let formattedTime = hours + ':' + minutes.slice(-2)
+
+    return formattedDate + formattedTime
+  }
 
   return (
     <Card
@@ -73,6 +108,7 @@ const WeatherTodayCard = ({ accView }: any) => {
           }}
         >
           <Input
+            sx={{ fontSize: '18px', height: 30 }}
             placeholder="Enter city name"
             onChange={cityNameInputHandler}
             value={cityNameInput}
@@ -91,9 +127,16 @@ const WeatherTodayCard = ({ accView }: any) => {
           <CurrentWeatherInfo
             weatherData={weatherData}
             weatherError={weatherError}
+            unixToTime={unixToTime}
+            unixToDate={unixToDate}
           />
         ) : (
-          <Typography>ACC VIEW</Typography>
+          <AccessibilityWeatherInfo
+            weatherData={weatherData}
+            weatherError={weatherError}
+            unixToTime={unixToTime}
+            unixToDate={unixToDate}
+          />
         )}
       </CardContent>
     </Card>

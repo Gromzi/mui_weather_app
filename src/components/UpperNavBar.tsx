@@ -2,7 +2,6 @@ import { Box, IconButton } from '@mui/material'
 import AccessibleForwardIcon from '@mui/icons-material/AccessibleForward'
 import '../styles/_upperNavBar.scss'
 import { accViewSetterFunctionType } from '../types/types'
-import React, { useEffect, useState } from 'react'
 
 type PropTypes = {
   accViewSetter: accViewSetterFunctionType
@@ -36,4 +35,4 @@ const UpperNavBar = ({ accViewSetter, accView }: PropTypes) => {
   )
 }
 
-export default React.memo(UpperNavBar)
+export default UpperNavBar
