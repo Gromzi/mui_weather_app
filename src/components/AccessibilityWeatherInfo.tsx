@@ -92,7 +92,11 @@ const AccessibilityWeatherInfo = ({
                 }}
               >
                 <DeviceThermostatIcon
-                  sx={{ fontSize: '50px', width: '25%' }}
+                  sx={{
+                    fontSize: '50px',
+                    width: '25%',
+                    color: 'red',
+                  }}
                 />
 
                 <Typography variant="body1" fontSize={'35px'}>
@@ -128,7 +132,7 @@ const AccessibilityWeatherInfo = ({
                 gap: 1,
               }}
             >
-              <AirIcon sx={{ fontSize: '50px' }} />
+              <AirIcon sx={{ fontSize: '50px', color: 'blue' }} />
 
               <Typography variant="body1" fontSize={'30px'}>
                 {weatherData?.main.pressure} hPa
@@ -164,7 +168,9 @@ const AccessibilityWeatherInfo = ({
                   gap: 1,
                 }}
               >
-                <WbSunnyIcon sx={{ fontSize: '60px' }} />
+                <WbSunnyIcon
+                  sx={{ fontSize: '60px', color: 'orange' }}
+                />
                 <Typography variant="body1" fontSize="24px">
                   {sunriseTime}
                 </Typography>
@@ -181,7 +187,9 @@ const AccessibilityWeatherInfo = ({
                   gap: 1,
                 }}
               >
-                <WbTwilightIcon sx={{ fontSize: '60px' }} />
+                <WbTwilightIcon
+                  sx={{ fontSize: '60px', color: 'orange' }}
+                />
                 <Typography variant="body1" fontSize="24px">
                   {sunsetTime}
                 </Typography>

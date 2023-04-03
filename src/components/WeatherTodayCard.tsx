@@ -95,7 +95,7 @@ const WeatherTodayCard = ({ accView }: any) => {
             mb: 3,
           }}
         >
-          Weather Info
+          Weather today
           <RefreshIcon className="icon" onClick={refetchWeather} />
         </Typography>
 
