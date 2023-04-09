@@ -11,9 +11,10 @@ const TodayView = ({ accView }: any) => {
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
+        justifyContent: 'center',
       }}
     >
-      <Typography variant="h4" align="center" sx={{ pt: 10 }}>
+      <Typography variant="h4" align="center" sx={{ pt: '15%' }}>
         MUI Weather App
       </Typography>
 

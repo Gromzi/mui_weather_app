@@ -22,11 +22,11 @@ body,
 .appContainer {
   height: 100svh;
   width: 100vw;
+  overflow-y: auto;
 }
 
 .appContainer {
-  display: flex;
-  scroll-behavior: smooth;
+  margin-bottom: 56px;
 }
 
 .MuiBottomNavigation-root {

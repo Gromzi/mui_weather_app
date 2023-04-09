@@ -17,7 +17,7 @@ const UpperNavBar = ({ accViewSetter, accView }: PropTypes) => {
         alignItems: 'center',
         position: 'fixed',
         width: '100%',
-        height: '10%',
+        height: '40px',
         top: 0,
         backgroundColor: 'secondary.main',
       }}
